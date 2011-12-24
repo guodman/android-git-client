@@ -16,6 +16,17 @@
             android:orientation="vertical" >
 
             <EditText
+                android:id="@+id/repoUsername"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:hint="Username"/>
+
+            <EditText
+                android:id="@+id/repoPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword" android:hint="Password"/>
+
+            <EditText
                 android:id="@+id/repoPath"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -48,6 +59,7 @@
                 android:text="Clone" />
 
         </LinearLayout>
+
     </ScrollView>
 
 </LinearLayout>

@@ -25,10 +25,14 @@ class GitClientActivity extends Activity {
     var mkdir: Button = null
     var clonePath: TextView = null
     var cloneButton: Button = null
+    var username: TextView = null
+    var password: TextView = null
 
     override def onCreate(savedInstanceState: Bundle) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.main)
+        username = this.findViewById(R.id.repoUsername).asInstanceOf[TextView]
+        password = this.findViewById(R.id.repoPassword).asInstanceOf[TextView]
         init = this.findViewById(R.id.init).asInstanceOf[Button]
         init.setOnClickListener(new InitializeRepo)
         repoPath = this.findViewById(R.id.repoPath).asInstanceOf[TextView]
@@ -86,7 +90,7 @@ class GitClientActivity extends Activity {
                     cc.setCloneAllBranches(true)
                     cc.setDirectory(new File(repoPath.getText.toString))
                     cc.setURI(clonePath.getText.toString)
-                    cc.setCredentialsProvider(new UsernamePasswordCredentialsProvider("", ""))
+                    cc.setCredentialsProvider(new UsernamePasswordCredentialsProvider(username.getText.toString, password.getText.toString))
                     try {
                         cc.call
                         showConfirmMessage("Clone Completed")
