@@ -15,6 +15,8 @@ import java.io.File
 import android.app.AlertDialog
 import android.content.DialogInterface
 import android.util.Log
+import org.eclipse.jgit.transport.CredentialsProvider
+import org.eclipse.jgit.transport.UsernamePasswordCredentialsProvider
 
 class GitClientActivity extends Activity {
     val TAG = "GitClientActivity";
@@ -84,6 +86,7 @@ class GitClientActivity extends Activity {
                     cc.setCloneAllBranches(true)
                     cc.setDirectory(new File(repoPath.getText.toString))
                     cc.setURI(clonePath.getText.toString)
+                    cc.setCredentialsProvider(new UsernamePasswordCredentialsProvider("", ""))
                     try {
                         cc.call
                         showConfirmMessage("Clone Completed")
