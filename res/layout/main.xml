@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <ScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <LinearLayout
+            android:id="@+id/linearLayout1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+            <EditText
+                android:id="@+id/repoPath"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/default_path" />
+
+            <Button
+                android:id="@+id/mkdir"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="mkdir" />
+
+            <Button
+                android:id="@+id/init"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Init" />
+
+            <EditText
+                android:id="@+id/cloneURI"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:hint="Clone URI" android:text="git://github.com/guodman/GroceryAssistant.git">
+
+                <requestFocus />
+            </EditText>
+
+            <Button
+                android:id="@+id/clone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Clone" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>
