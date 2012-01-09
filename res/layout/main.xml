@@ -58,6 +58,12 @@
                 android:layout_height="wrap_content"
                 android:text="Clone" />
 
+            <Button
+                android:id="@+id/log"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Log" />
+
         </LinearLayout>
 
     </ScrollView>

@@ -17,6 +17,8 @@ import android.content.DialogInterface
 import android.util.Log
 import org.eclipse.jgit.transport.CredentialsProvider
 import org.eclipse.jgit.transport.UsernamePasswordCredentialsProvider
+import android.content.Context
+import android.content.Intent
 
 class GitClientActivity extends Activity {
     val TAG = "GitClientActivity";
@@ -41,6 +43,8 @@ class GitClientActivity extends Activity {
         clonePath = this.findViewById(R.id.cloneURI).asInstanceOf[TextView]
         cloneButton = this.findViewById(R.id.clone).asInstanceOf[Button]
         cloneButton.setOnClickListener(new CloneRepo)
+        val log = this.findViewById(R.id.log).asInstanceOf[Button]
+        log.setOnClickListener(new ViewSwitcher(this, classOf[LogActivity]))
     }
 
     def showConfirmMessage(text: String) {
@@ -105,4 +109,10 @@ class GitClientActivity extends Activity {
             }).start
         }
     }
+}
+
+class ViewSwitcher (context : Context, cls : Class[_]) extends OnClickListener {
+	override def onClick(v: View): Unit = {
+		context.startActivity(new Intent(context, cls))
+	}
 }
